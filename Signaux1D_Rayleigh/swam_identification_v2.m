@@ -32,6 +32,7 @@ Kp=2*pi*f/CR;
 Ks=100
 K=ones(nx,1)*(-Kp+sqrt(-1)*Ks);
 Sp=exp(sqrt(-1)*K.*x(:,1:nt/2));
+%s=exp(sqrt(-1)*K.*x(:,1:nt/2));
 S=[Sp fliplr(conj(Sp))];
 %mesh(real(ifft(S,[],4)))
 %calc space-time signal:
@@ -94,6 +95,7 @@ CR=4000*(atan(1-f/3e6)+pi/2)/pi;
 Kp=2*pi*f./CR;
 Ks=100
 K=ones(nx,1)*(-Kp+sqrt(-1)*Ks);
+%Sp=exp(sqrt(-1)*-Kp+sqrt(-1)*100.*x(:,1:nt/2))
 Sp=exp(sqrt(-1)*K.*x(:,1:nt/2));
 S=[Sp fliplr(conj(Sp))];
 %mesh(abs(ifft(S)));
